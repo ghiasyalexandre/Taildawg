@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { Suspense, useLayoutEffect } from "react";
+
 import {
-  useGLTF,
   MeshReflectorMaterial,
   Float,
   Stage,
@@ -19,16 +19,17 @@ export default function Demo() {
       polar={[-0.1, Math.PI / 3]}
     >
       <Stage environment={"city"} intensity={0.6} contactShadow={false}>
-        <Suspense>
-          <Float
-            speed={1}
-            rotationIntensity={1}
-            floatIntensity={1}
-            floatingRange={[0, 0.25]}
-          >
+        <Float
+          speed={1}
+          rotationIntensity={1}
+          floatIntensity={1}
+          floatingRange={[0, 0.25]}
+        >
+          <Suspense>
             <Letters />
-          </Float>
-        </Suspense>
+          </Suspense>
+          {/* <Model model="pi"></Model> */}
+        </Float>
       </Stage>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.75, 0]}>
         <planeGeometry args={[170, 170]} />

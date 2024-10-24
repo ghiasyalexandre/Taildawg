@@ -1,17 +1,33 @@
-/* Author: Ghiasy Alexandre */
-
 import React from "react";
 import * as THREE from "three";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useCustomization } from "../contexts/Customization";
+import { Model } from "./Model";
 
 export default function Letters(props) {
-  const { material, shapeIndex, letter, matColor, previousColor } =
-    useCustomization();
-  const { nodes, materials } = useGLTF(`./models/${letter.name}.glb`);
+  const {
+    material,
+    shapeIndex,
+    setShapeIndex,
+    setLetter,
+    paddles,
+    baseColors,
+    meshLetters,
+    updateMeshLetter,
+  } = useCustomization();
+
+  const handleShapeIndexChange = (index) => {
+    const newShapeIndex = index; //=== shapeIndex ? -1 : index; // Use -1 to deselect
+    setShapeIndex(newShapeIndex);
+  };
+
+  const handleColorChange = (index, color) => {
+    const newColors = baseColors[index] === "#ff0000" ? "#0000ff" : "#ff0000";
+    newColors[index] = color; // Update the color for the specific mesh
+    updateColors(newColors); // Set the new colors array
+  };
 
   const barkTextureProps = useTexture({
-    //map: "./textures/Bark/Bark_06_basecolor.jpg",
     displacementMap: "./textures/Bark/Bark_06_height.png",
     normalMap: "./textures/Bark/Bark_06_normal.jpg",
     roughnessMap: "./textures/Bark/Bark_06_roughness.jpg",
@@ -19,14 +35,12 @@ export default function Letters(props) {
   });
 
   const woodTextureProps = useTexture({
-    //map: "./textures/Wood/Wood_027_basecolor.jpg",
     displacementMap: "./textures/Wood/Wood_027_height.png",
     normalMap: "./textures/Wood/Wood_027_normal.jpg",
     roughnessMap: "./textures/Wood/Wood_027_roughness.jpg",
     aoMap: "./textures/Wood/Wood_027_ambientOcclusion.jpg",
   });
 
-  // Setting texture repeats and wrapping
   const setTextureProps = (textureProps, repeat) => {
     Object.keys(textureProps).forEach((key) => {
       if (textureProps[key] instanceof THREE.Texture) {
@@ -40,60 +54,52 @@ export default function Letters(props) {
   setTextureProps(barkTextureProps, [2, 2]);
   setTextureProps(woodTextureProps, [2, 2]);
 
+  console.log(meshLetters, shapeIndex, baseColors);
+
+  // Handle selecting a letter and updating the mesh letter
+  const handleLetterClick = (item) => {
+    //setLetter(item);
+    console.log("Change to letter: ", shapeIndex, item);
+    updateMeshLetter(shapeIndex, item);
+  };
+
   return (
     <group {...props} dispose={null}>
-      <group rotation={[Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
-        {Array.from({ length: 3 }).map((_, index) => (
-          <mesh
-            key={index}
-            geometry={nodes[letter.symbol]?.geometry}
-            position={[0, 0, -index * 0.54]} // Adjust the position for each mesh
-          >
-            <meshStandardMaterial
-              {...(material === "bark" ? barkTextureProps : woodTextureProps)}
-              color={
-                shapeIndex === index
-                  ? matColor.color
-                  : previousColor[index] || "white"
-              } // Change color based on shapeIndex
-              castShadow
-              receiveShadow
-              //emissive={matColor.color}
+      <group rotation={[Math.PI / 2, 0, 0]} position={[0, 1, 0]} scale={1}>
+        {meshLetters
+          .slice()
+          .reverse()
+          .map((letter, index) => (
+            <Model
+              key={index}
+              index={index}
+              letter={letter}
+              position={[0, 0, -index * 0.5]}
+              onClick={() => {
+                handleShapeIndexChange(index); // Call when model is clicked
+                handleLetterClick(letter); // Update the letter when model is clicked
+              }}
+              colorProp={{
+                color: baseColors[index] || "white", // Use baseColors for each shape
+              }}
             />
-          </mesh>
-        ))}
-        {/* {nodes[letter.symbol] && ( */}
-        {/* <mesh geometry={nodes[letter.symbol]?.geometry} position={[0, 0, -1]}>
-          <meshStandardMaterial
-            {...(material === "bark" ? barkTextureProps : woodTextureProps)}
-            color={matColor.color && shapeIndex === 0}
-            castShadow
-            receiveShadow
-            //emissive={matColor.color}
-          />
-        </mesh>
-        <mesh geometry={nodes[letter.symbol]?.geometry} position={[0, 0, -0.5]}>
-          <meshStandardMaterial
-            {...(material === "bark" ? barkTextureProps : woodTextureProps)}
-            color={matColor.color && shapeIndex === 1}
-            castShadow
-            receiveShadow
-            //emissive={matColor.color}
-          />
-        </mesh>
-        <mesh geometry={nodes[letter.symbol]?.geometry}>
-          <meshStandardMaterial
-            {...(material === "bark" ? barkTextureProps : woodTextureProps)}
-            color={matColor.color && shapeIndex === 2}
-            castShadow
-            receiveShadow
-            //emissive={matColor.color}
-          />
-        </mesh> */}
-        {/* )} */}
+          ))}
       </group>
     </group>
   );
 }
 
-useGLTF.preload("./models/pi.gltf");
+// Preload all potential models in advance
+// meshLetters.forEach((meshLetter) => {
+//   try {
+//     if (meshLetter) {
+//       useGLTF.preload(`./models/${meshLetter}.glb`);
+//     }
+//   } catch (error) {
+//     console.log("useGLTF Preload Failed: ", error);
+//   }
+// });
+
+// useGLTF.preload(`./models/${meshLetters[0]}.glb`);
+// useGLTF.preload(`./models/${meshLetters[1]}.glb`);
+// useGLTF.preload(`./models/${meshLetters[2]}.glb`);

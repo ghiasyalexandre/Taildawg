@@ -2,95 +2,138 @@ import { createContext, useContext, useState } from "react";
 
 const CustomizationContext = createContext({});
 
-export const matColors = [
+export const paddleList = [
   {
-    color: "#ececec",
-    name: "white",
-  },
-  {
-    color: "#59555b",
-    name: "grey",
-  },
-  {
-    color: "#222222",
-    name: "black",
-  },
-  {
-    color: "#70110C",
-    name: "crimson",
-  },
-  {
-    color: "#892222",
-    name: "red",
-  },
-  {
-    color: "#4169e1",
-    name: "blue",
-  },
-  {
-    color: "#5A357F",
-    name: "purple",
-  },
-  {
-    color: "#CCBDE5",
-    name: "mauve",
-  },
-  {
-    color: "#FA8072",
-    name: "pink",
-  },
-  {
-    color: "#76CD26",
-    name: "lime",
-  },
-  {
-    color: "#c39439",
-    name: "yellow",
-  },
-  {
-    color: "#b58037",
-    name: "gold",
-  },
-  {
-    color: "#512D1E",
-    name: "brown",
-  },
-  {
-    color: "#FFFDD0",
-    name: "cream",
+    name: "paddle",
   },
 ];
 
 export const letterList = [
   {
+    name: "alpha",
+    symbol: "Α",
+  },
+  {
+    name: "beta",
+    symbol: "Β",
+  },
+  {
+    name: "gamma",
+    symbol: "Γ",
+  },
+  {
+    name: "delta",
+    symbol: "Δ",
+  },
+  {
+    name: "epsilon",
+    symbol: "Ε",
+  },
+  {
+    name: "zeta",
+    symbol: "Ζ",
+  },
+  {
+    name: "eta",
+    symbol: "Η",
+  },
+  {
+    name: "theta",
+    symbol: "Θ",
+  },
+  {
+    name: "iota",
+    symbol: "Ι",
+  },
+  {
+    name: "kappa",
+    symbol: "Κ",
+  },
+  {
+    name: "lambda",
+    symbol: "Λ",
+  },
+  {
+    name: "mu",
+    symbol: "Μ",
+  },
+  {
+    name: "nu",
+    symbol: "Ν",
+  },
+  {
+    name: "xi",
+    symbol: "Ξ",
+  },
+  {
+    name: "omicron",
+    symbol: "Ο",
+  },
+  {
     name: "pi",
-    symbol: "π",
+    symbol: "Π",
   },
   {
-    name: "DELTA",
-    symbol: "Text",
+    name: "rho",
+    symbol: "Ρ",
   },
   {
-    name: "PSI",
-    symbol: "ψ",
+    name: "sigma",
+    symbol: "Σ",
+  },
+  {
+    name: "tau",
+    symbol: "Τ",
+  },
+  {
+    name: "upsilon",
+    symbol: "Υ",
+  },
+  {
+    name: "phi",
+    symbol: "Φ",
+  },
+  {
+    name: "chi",
+    symbol: "Χ",
+  },
+  {
+    name: "psi",
+    symbol: "Ψ",
+  },
+  {
+    name: "omega",
+    symbol: "Ω",
   },
 ];
 
 export const CustomizationProvider = (props) => {
   const [material, setMaterial] = useState("wood");
   const [shapeIndex, setShapeIndex] = useState(0);
-  const [letter, setLetter] = useState(letterList[0]);
-  const [matColor, setMatColor] = useState(matColors[0]);
-  const [previousColor, setPreviousColor] = useState([
-    "white",
-    "white",
-    "white",
+  const [letter, setLetter] = useState(letterList[15]);
+  //const [paddles, setPaddles] = useState(letterList[23]);
+  const [selectedColor, setSelectedColor] = useState("#000000");
+  const [baseColors, setBaseColors] = useState([
+    "#000000",
+    "#ffffff",
+    "#000000",
   ]);
+  const [meshLetters, setMeshLetters] = useState([
+    letterList[15],
+    letterList[3],
+    letterList[22],
+  ]); // Initializing with indices for letterList
 
-  const updateColor = (index, color) => {
-    const matColor = [...previousColor];
-    matColor[index] = color; // Update the color for the specific shape index
-    setPreviousColors(matColor);
+  const updateColors = (index, color) => {
+    const updatedColors = [...baseColors];
+    updatedColors[index] = color; // Update the color for the specific shape index
+    setBaseColors(updatedColors);
+  };
+
+  const updateMeshLetter = (index, newLetter) => {
+    const updatedMeshLetters = [...meshLetters];
+    updatedMeshLetters[index] = newLetter;
+    setMeshLetters(updatedMeshLetters);
   };
 
   return (
@@ -102,10 +145,14 @@ export const CustomizationProvider = (props) => {
         setShapeIndex,
         letter,
         setLetter,
-        matColor,
-        setMatColor,
-        previousColor,
-        setPreviousColor,
+        updateColors,
+        selectedColor,
+        setSelectedColor,
+        baseColors,
+        setBaseColors,
+        meshLetters,
+        setMeshLetters,
+        updateMeshLetter,
       }}
     >
       {props.children}
