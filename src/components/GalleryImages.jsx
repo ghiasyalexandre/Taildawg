@@ -40,7 +40,7 @@ export default function GalleryImages({ loadImages }) {
                   {/* Modal */}
                   {isModalOpen[index] && (
                     <div
-                      className=" container mx-auto fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40"
+                      className="  fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40"
                       onClick={() => closeModal(index)} // Close modal when clicking on background
                     >
                       <div

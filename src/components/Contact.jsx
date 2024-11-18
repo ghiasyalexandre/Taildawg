@@ -207,14 +207,10 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-
-              <div className="mt-6 space-y-8 md:mt-8">
-                {/* Contact details here */}
-              </div>
             </div>
 
-            <div className="mt-8 lg:w-1/2 lg:mx-6">
-              <div className="w-full px-8 py-6 mx-auto overflow-hidden bg-neutral-50 rounded-lg shadow-lg dark:shadow-md dark:bg-neutral-800 lg:max-w-xl shadow-black/50 dark:shadow-white/20">
+            <div className="mt-8 lg:w-2/3 lg:mx-8">
+              <div className="w-full px-8 py-6  overflow-hidden bg-neutral-50 rounded-lg shadow-lg dark:shadow-md dark:bg-neutral-800 lg:max-w-4xl shadow-black/50 dark:shadow-white/20">
                 <form onSubmit={handleSubmit} className="mt-6">
                   <div className="flex-1">
                     <label className="block mb-2 text-sm text-gray-600 dark:text-neutral-200">

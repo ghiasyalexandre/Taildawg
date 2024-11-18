@@ -14,8 +14,8 @@ export default function Footer() {
             <div className="flex flex-col items-center text-center">
               <Link to="/" draggable={false} className="relative inline-block">
                 <img
-                  className="w-auto scale-70 hover:scale-80 lg:scale-90 lg:hover:scale-100 transition-transform duration-500 ease-in-out"
-                  src="./imgs/taildawgLogo.webp"
+                  className="w-auto scale-80 hover:scale-90 lg:scale-100 lg:hover:scale-110 transition-transform duration-500 ease-in-out"
+                  src="./imgs/taildawgLogoOutline.webp"
                   alt=""
                   draggable={false}
                 />

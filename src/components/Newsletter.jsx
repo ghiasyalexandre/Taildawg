@@ -107,7 +107,7 @@ export default function Newsletter() {
                 </svg>
               </div>
               <dt className="mt-4 font-semibold text-white">Weekly Updates</dt>
-              <dd className="mt-2 leading-7 dark:text-gray-400">
+              <dd className="mt-2 leading-7 dark:text-gray-300">
                 Get new articles, tips, and insights delivered to your inbox
                 every week. Stay informed and inspired!
               </dd>
@@ -131,7 +131,7 @@ export default function Newsletter() {
                 </svg>
               </div>
               <dt className="mt-4 font-semibold text-white">No Spam</dt>
-              <dd className="mt-2 leading-7 dark:text-gray-400">
+              <dd className="mt-2 leading-7 dark:text-gray-300">
                 We respect your privacy and will never send you unwanted emails.
                 Unsubscribe anytime with one click.
               </dd>

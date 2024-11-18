@@ -33,12 +33,12 @@ function Customizer(props) {
           <Demo />
           {/* <Stats /> */}
         </Canvas>
-        <button
+        {/* <button
           id="button"
-          className="absolute right-8 bottom-4  opacity-50 p-1 lg:p-2 lg:fixed lg:top-auto flex items-center text-neutral-700 hover:text-white"
+          className="static right-6 top-16  opacity-50 p-1 lg:p-2 lg:static lg:top-16 flex items-center text-neutral-700 hover:text-white"
           onClick={() => downloadScreenshot()}
         >
-          {/* Hidden on larger screens */}
+          Hidden on larger screens
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-8 h-8 block mr-2 mt-1 ml-4 lg:hidden"
@@ -51,9 +51,9 @@ function Customizer(props) {
             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
           </svg>
 
-          {/* Hidden on smaller screens */}
+          Hidden on smaller screens
           <span className="hidden lg:block">Download Screenshot</span>
-        </button>
+        </button> */}
         <Configurator />
       </CustomizationProvider>
     );

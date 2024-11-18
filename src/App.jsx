@@ -39,7 +39,7 @@ function App() {
           <MainNav />
           <button
             onClick={toggleTheme}
-            className="px-2 py-2 font-semibold text-white dark:text-white bg-neutral-400 dark:bg-red-600 rounded-full absolute right-8 bottom-4 z-30"
+            className="px-2 py-2 font-semibold text-white dark:text-white bg-neutral-400 dark:bg-red-600 rounded-full absolute right-3 sm:right-8 bottom-4 z-30"
           >
             {theme === "light" ? (
               <svg

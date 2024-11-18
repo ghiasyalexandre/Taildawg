@@ -53,11 +53,11 @@ export function ModelView({ ...props }) {
   const { nodes, materials } = useGLTF(modelPath);
 
   return (
-    <div className=" h-[300px] sm:h-[400px] lg:h-[375px] w-full py-2 px-8">
+    <div className=" h-[300px] sm:h-[400px] lg:h-[375px] w-full py-2 px-2 lg:px-8">
       <Canvas
         ref={ref}
         camera={{ position: [0, 0, 5], zoom: 0.85 }}
-        className="touch-none rounded-3xl shadow-lg dark:shadow-none shadow-black/50 dark:shadow-white/30"
+        className="touch-none rounded-3xl shadow-lg shadow-black/50 dark:shadow-neonLight"
         gl={{ preserveDrawingBuffer: true }}
         dpr={[1, 2]}
       >

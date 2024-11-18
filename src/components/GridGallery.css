@@ -1,32 +1,35 @@
-  .close {
-    color: #fff;
-    font-size: 3em;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-  }
-  .gallery {
-    max-width: 1200px;
-    margin: 0 auto;
-    grid-template-rows: 1fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-    
-  }
-  .gallery-image {
-    transition: transform 0.5s ease-in-out; 
-  }
-  
-  .gallery-image:hover {
-    transform: scale(1.08); /* Scale up the image */
-  }
+.close {
+  color: #fff;
+  font-size: 3em;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+.gallery-image {
+  transition: transform 0.5s ease-in-out;
+}
 
-  .y-spin {
-    transform: rotateY(-35deg);
-    animation: rotateY 8s infinite ease-in-out;
+.gallery-image:hover {
+  transform: scale(1.08); /* Scale up the image */
+}
+
+.y-spin {
+  transform: rotateY(-25deg); /* Start at the left angle */
+  animation: rotateY 8s infinite ease-in-out;
+  -webkit-transition: -webkit-transform 8s ease-in-out;
+  -moz-transition: -moz-transform 8s ease-in-out;
+}
+
+@keyframes rotateY {
+  to {
+    transform: rotateY(25deg); /* Return to the starting position */
   }
-  @keyframes rotateY {
-    to { transform: rotateY(35deg); }
-  }
-  
+}

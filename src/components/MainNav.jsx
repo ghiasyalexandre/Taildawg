@@ -32,7 +32,7 @@ export default function MainNav(props) {
         <Link to="/" className="relative group">
           <img
             className="scale-50 lg:scale-70 pointer-events-auto hover:scale-55 lg:hover:scale-75 lg:pt-8 transition-transform duration-500"
-            src="./imgs/taildawgLogo.webp"
+            src="./imgs/taildawgLogoOutline.webp"
             alt="Taildawg"
             draggable="false"
           />
