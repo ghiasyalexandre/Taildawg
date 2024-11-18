@@ -39,7 +39,7 @@ const Configurator = React.memo(() => {
   );
 
   return (
-    <div className="fixed pointer-events-none w-80 left-4 bottom-4 text-white flex flex-col p-4 gap-6">
+    <div className="fixed pointer-events-none w-80 left-2 bottom-2 text-white flex flex-col p-2 gap-6">
       {/* Color Picker */}
       <div className="pt-4">
         <div className="font-bold uppercase">Color</div>
@@ -54,16 +54,16 @@ const Configurator = React.memo(() => {
       {/* Material Selector */}
       <div className="pt-1">
         <div className="font-bold uppercase">Materials</div>
-        <div className="flex align-middle gap-4 mt-2 flex-wrap">
+        <div className="flex align-middle gap-4 mt-2 flex-wrap ">
           {["bark", "wood"].map((mat) => (
             <div
               key={mat}
-              className={`item pointer-events-auto ${
+              className={`item pointer-events-auto  ${
                 material === mat ? "item--active" : ""
               }`}
               onClick={() => handleMaterialClick(mat)}
             >
-              <div className="item-label">
+              <div className="item-label text-lg">
                 {mat.charAt(0).toUpperCase() + mat.slice(1)}
               </div>
             </div>
@@ -74,21 +74,21 @@ const Configurator = React.memo(() => {
       {/* Letter Selector */}
       <div className="pt-1">
         <div className="font-bold uppercase">Letters</div>
-        <div className="flex align-middle gap-4 mt-2 flex-wrap">
+        <div className="grid grid-cols-12 gap-4 mt-2 flex-wrap">
           {letterList.map((item, index) => (
             <div
               key={item.name}
-              className={`flex pointer-events-auto relative item ${
-                item.name === letter.name ? "item--active" : ""
+              className={`flex pointer-events-auto relative item  ${
+                item.name === letterList[index].name ? "item--active" : ""
               }`}
               onClick={() => setLetter(item)}
             >
-              <div className="item-label relative cursor-pointer">
+              <div className="item-label relative cursor-pointer text-lg group">
                 {item.symbol}
                 {/* Tooltip */}
                 <div
-                  className="tooltip-content hover:opacity-100 transition-opacity bg-gray-800 px-2 py-1 text-sm text-gray-100 
-                    rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 z-10 pointer-events-none"
+                  className="tooltip-content transition-opacity duration-300 bg-gray-800 px-2 py-1 text-sm text-gray-100 rounded-md 
+      absolute left-1/2 -translate-x-1/2  opacity-0 z-10 group-hover:opacity-100 pointer-events-none"
                 >
                   {item.name}
                 </div>

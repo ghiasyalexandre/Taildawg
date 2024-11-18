@@ -10,22 +10,23 @@ export default function MainNav(props) {
   };
 
   // Conditionally add/remove the mb-16 class if the current path is /customizer
-  const navChanger = `pl-6 py-4 ${
+  const navChanger = `mx-2 py-4  ${
     location.pathname !== "/customizer"
       ? "lg:pb-16 "
-      : !isOpen
-      ? "mb-12 lg:mb-0"
-      : "mb-0"
-  }`;
+      : isOpen
+      ? "mb-0"
+      : "mb-12 lg:mb-0"
+  }
+  } `;
 
-  const logoChanger = `absolute pointer-events-none inset-0 h-32  z-50  ${
+  const logoChanger = `absolute top-0 left-1/2 transform -translate-x-1/2 h-32 z-50 pointer-events-none ${
     location.pathname !== "/customizer"
       ? "flex items-center justify-center"
-      : "flex items-center justify-center lg:block lg:absolute lg:-left-8 lg:top-4"
+      : "flex items-center justify-center lg:block lg:left-20 lg:top-4"
   }`;
 
   return (
-    <nav id="home" className="bg-transparent">
+    <nav id="home" className="bg-transparent relative">
       {/* Center Logo */}
       <div id="logo" className={logoChanger}>
         <Link to="/" className="relative group">
@@ -54,7 +55,7 @@ export default function MainNav(props) {
               <button
                 onClick={toggleMenu}
                 type="button"
-                className="text-red-500 dark:text-gray-200 hover:text-neutral-700 dark:hover:text-gray-400 focus:outline-none"
+                className="text-gray-200 hover:text-neutral-700 dark:hover:text-gray-400 focus:outline-none"
                 aria-label="toggle menu"
               >
                 {!isOpen ? (
@@ -94,49 +95,50 @@ export default function MainNav(props) {
 
           {/* Navigation Links */}
           <div
-            className={`inset-0 z-20 flex-1 w-full h-fit px-2 pt-2 transition-all duration-300 ease-in-out bg-white dark:bg-black lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between ${
+            className={`inset-0 z-20 flex-1 w-full h-fit px-2 pt-2 transition-transform duration-300 ease-in-out lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between ${
               isOpen ? "block" : "hidden"
             }`}
           >
-            <div className="flex flex-col text-black capitalize dark:text-gray-900 lg:flex lg:flex-row lg:items-center">
+            <div className="flex flex-col capitalize text-black lg:flex lg:flex-row lg:items-center">
               <Link
                 to="/"
-                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-400 hover:underline hover:underline-offset-8"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:ml-4 text-black dark:text-white hover:text-gray-400 hover:underline hover:underline-offset-8"
               >
                 Home
               </Link>
               <Link
                 to="/gallery"
-                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-400 hover:underline hover:underline-offset-8"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:ml-4 text-black dark:text-white hover:text-gray-400 hover:underline hover:underline-offset-8"
               >
                 Gallery
               </Link>
               <Link
                 to="/order"
-                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-400 hover:underline hover:underline-offset-8"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:ml-4 text-black dark:text-white hover:text-gray-400 hover:underline hover:underline-offset-8"
               >
                 Order
               </Link>
               <Link
                 to="/contact"
-                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-400 hover:underline hover:underline-offset-8"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:ml-4 text-black dark:text-white hover:text-gray-400 hover:underline hover:underline-offset-8"
               >
                 Contact
               </Link>
               <Link
                 to="/customizer"
-                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-400 hover:underline hover:underline-offset-8"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:ml-4 text-black dark:text-white hover:text-gray-400 hover:underline hover:underline-offset-8"
               >
                 Customizer
               </Link>
             </div>
           </div>
           {/* Social Links */}
-          <div className="absolute z-20 right-2 lg:right-2 top-4 lg:-top-1 pt-3 flex lg:mt-2 lg:mx-0 lg:mr-2">
+          <div className="absolute z-20 right-2 lg:right-2 top-4 lg:-top-1 pt-3 flex lg:mt-2 lg:mx-0">
             <a
-              href="#"
-              className="mx-2 text-black transition-colors duration-300 transform dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
+              href="https://www.instagram.com/taildawgproductions/"
+              className="md:mx-1 lg:mx-2 text-black transition-colors duration-300 transform dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
               aria-label="Instagram"
+              target="blank"
             >
               <svg
                 className="w-8 h-8 fill-current"
@@ -148,7 +150,7 @@ export default function MainNav(props) {
             </a>
             <a
               href="#"
-              className="mx-2 text-black transition-colors duration-300 transform dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
+              className="md:mx-1 lg:mx-2 text-black transition-colors duration-300 transform dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
               aria-label="Facebook"
             >
               <svg
@@ -161,7 +163,7 @@ export default function MainNav(props) {
             </a>
             <a
               href="#"
-              className="mx-2 text-black transition-colors duration-300 transform dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
+              className="md:mx-1 lg:mx-2 text-black transition-colors duration-300 transform dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
               aria-label="Reddit"
             >
               <svg

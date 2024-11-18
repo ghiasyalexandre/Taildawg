@@ -12,7 +12,9 @@
   "dependencies": {
     "@react-three/drei": "^9.114.6",
     "@react-three/fiber": "^8.17.10",
+    "@react-three/postprocessing": "^2.16.3",
     "@types/three": "^0.169.0",
+    "chroma-js": "^3.1.2",
     "emailjs-com": "^3.2.0",
     "react": "^18.3.1",
     "react-devtools-core": "^6.0.1",

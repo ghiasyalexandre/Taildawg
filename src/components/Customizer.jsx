@@ -35,7 +35,7 @@ function Customizer(props) {
         </Canvas>
         <button
           id="button"
-          className="absolute right-4 bottom-4 opacity-50 p-1 lg:p-2 lg:fixed lg:top-auto lg:right-6 lg:bottom-8 flex items-center text-neutral-700 hover:text-white"
+          className="absolute right-8 bottom-4  opacity-50 p-1 lg:p-2 lg:fixed lg:top-auto flex items-center text-neutral-700 hover:text-white"
           onClick={() => downloadScreenshot()}
         >
           {/* Hidden on larger screens */}

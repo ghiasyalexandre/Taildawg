@@ -37,7 +37,7 @@ export default function Contact() {
         (response) => {
           setStatus("SUCCESS");
           setFormData({ name: "", phone: "", email: "", message: "" });
-          setTimeout(() => setStatus(""), 3000); // Clear status message after 3 seconds
+          setTimeout(() => setStatus(""), 5000); // Clear status message after 3 seconds
         },
         (error) => {
           setStatus("ERROR");
@@ -52,14 +52,14 @@ export default function Contact() {
         <div className="container px-6 mx-auto">
           <div className="lg:flex lg:items-center lg:-mx-6">
             <div className="lg:w-1/2 lg:mx-6">
-              <h1 className="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
+              <h1 className=" text-center  lg:text-left text-3xl font-semibold text-gray-800 capitalize dark:text-white md:text-4xl xl:text-5xl">
                 Contact us for <br /> more info
               </h1>
-              <div class="mt-6 space-y-8 md:mt-8">
-                <p class="flex items-start -mx-2">
+              <div className="mt-6 space-y-8 sm:space-y-0 lg:space-y-8 block md:mt-8 sm:flex sm:justify-between lg:block text-xl">
+                <p className="flex items-start -mx-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 mx-2 text-blue-500 dark:text-red-500"
+                    className="w-6 h-6 lg:w-8 lg:h-8 mx-2 sm:mr-0 lg:mr-2 text-red-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -77,15 +77,15 @@ export default function Contact() {
                     />
                   </svg>
 
-                  <span class="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                  <span className="mx-1 lg:pt-1 text-gray-700 truncate lg:w-72 dark:text-gray-400">
                     Orlando, FL
                   </span>
                 </p>
 
-                <p class="flex items-start -mx-2">
+                <p className="flex items-start -mx-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 mx-2 text-blue-500  dark:text-red-500"
+                    className="w-6 h-6 md:w-8 lg:h-8 mx-2 sm:mr-0 lg:mr-2 text-red-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -98,15 +98,15 @@ export default function Contact() {
                     />
                   </svg>
 
-                  <span class="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                  <span className="mx-1 lg:pt-0.5 text-gray-700 truncate lg:w-72 dark:text-gray-400">
                     (407) 563-7401
                   </span>
                 </p>
 
-                <p class="flex items-start -mx-2">
+                <p className="flex items-start -mx-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 mx-2 text-blue-500 dark:text-red-500"
+                    className="w-6 h-6 lg:w-8 lg:h-8 mx-2 sm:mr-0 lg:mr-2 text-red-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -119,24 +119,25 @@ export default function Contact() {
                     />
                   </svg>
 
-                  <span class="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                  <span className="mx-1 lg:pt-0.5 text-gray-700 truncate lg:w-72 dark:text-gray-400">
                     info@taildawg.com
                   </span>
                 </p>
               </div>
 
-              <div class="mt-6 w-80 md:mt-8">
-                <h3 class="text-gray-600 dark:text-gray-300 ">Follow us</h3>
+              <div className="mt-6 w-80 md:mt-8">
+                <h3 className="text-gray-600 dark:text-gray-300 ">Follow us</h3>
 
-                <div class="flex mt-4 -mx-1.5 ">
+                <div className="flex mt-4 -mx-1.5 ">
                   <a
-                    class="mx-1.5 dark:hover:text-neutral-100 dark:text-grey-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5 dark:hover:text-neutral-100 dark:text-grey-400 text-gray-400 transition-colors duration-300 transform hover:text-black"
                     href="#"
                   >
                     <svg
-                      class="w-10 h-10 fill-current"
+                      className="w-10 h-10 fill-current"
                       viewBox="0 0 24 24"
                       fill="none"
+                      target="blank"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M18.6668 6.67334C18.0002 7.00001 17.3468 7.13268 16.6668 7.33334C15.9195 6.49001 14.8115 6.44334 13.7468 6.84201C12.6822 7.24068 11.9848 8.21534 12.0002 9.33334V10C9.83683 10.0553 7.91016 9.07001 6.66683 7.33334C6.66683 7.33334 3.87883 12.2887 9.3335 14.6667C8.0855 15.498 6.84083 16.0587 5.3335 16C7.53883 17.202 9.94216 17.6153 12.0228 17.0113C14.4095 16.318 16.3708 14.5293 17.1235 11.85C17.348 11.0351 17.4595 10.1932 17.4548 9.34801C17.4535 9.18201 18.4615 7.50001 18.6668 6.67268V6.67334Z" />
@@ -144,13 +145,14 @@ export default function Contact() {
                   </a>
 
                   <a
-                    class="mx-1.5 dark:hover:text-neutral-100 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5 dark:hover:text-neutral-100 text-gray-400 transition-colors duration-300 transform hover:text-black"
                     href="#"
                   >
                     <svg
-                      class="w-8 h-8"
+                      className="w-8 h-8"
                       viewBox="0 0 24 24"
                       fill="none"
+                      target="blank"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -169,11 +171,12 @@ export default function Contact() {
                   </a>
 
                   <a
-                    class="mx-1.5 dark:hover:text-neutral-100 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5 dark:hover:text-neutral-100 text-gray-400 transition-colors duration-300 transform hover:text-black"
                     href="#"
+                    target="blank"
                   >
                     <svg
-                      class="w-8 h-8"
+                      className="w-8 h-8"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -186,11 +189,12 @@ export default function Contact() {
                   </a>
 
                   <a
-                    class="mx-1.5 dark:hover:text-neutral-100 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
-                    href="#"
+                    className="mx-1.5 dark:hover:text-neutral-100 text-gray-400 transition-colors duration-300 transform hover:text-black"
+                    href="https://www.instagram.com/taildawgproductions/"
+                    target="blank"
                   >
                     <svg
-                      class="w-8 h-8"
+                      className="w-8 h-8"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -210,11 +214,11 @@ export default function Contact() {
             </div>
 
             <div className="mt-8 lg:w-1/2 lg:mx-6">
-              <div className="w-full px-8 py-6 mx-auto overflow-hidden bg-white rounded-lg shadow-2xl dark:bg-neutral-800 lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
+              <div className="w-full px-8 py-6 mx-auto overflow-hidden bg-neutral-50 rounded-lg shadow-lg dark:shadow-md dark:bg-neutral-800 lg:max-w-xl shadow-black/50 dark:shadow-white/20">
                 <form onSubmit={handleSubmit} className="mt-6">
                   <div className="flex-1">
                     <label className="block mb-2 text-sm text-gray-600 dark:text-neutral-200">
-                      Name *
+                      Name*
                     </label>
                     <input
                       type="text"
@@ -243,7 +247,7 @@ export default function Contact() {
 
                   <div className="flex-1 mt-6">
                     <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Email address *
+                      Email address*
                     </label>
                     <input
                       type="email"
@@ -258,12 +262,13 @@ export default function Contact() {
 
                   <div className="w-full mt-6">
                     <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Message
+                      Message*
                     </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
+                      required
                       className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 dark:bg-neutral-900 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:placeholder-neutral-600 dark:text-gray-300 dark:border-neutral-700 focus:border-blue-400 dark:focus:border-neutral-500 dark:focus:ring-neutral-400 focus:ring-blue-100 focus:outline-none focus:ring focus:ring-opacity-40"
                       placeholder="Your message"
                     ></textarea>
@@ -271,7 +276,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 dark:bg-red-600 rounded-md hover:bg-blue-400 dark:hover:bg-red-500 focus:outline-none focus:ring focus:ring-blue-300 dark:focus:ring-red-400 focus:ring-opacity-50"
+                    className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:ring focus:ring-blue-300 dark:focus:ring-red-400 focus:ring-opacity-50"
                   >
                     Get in touch
                   </button>
@@ -292,7 +297,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

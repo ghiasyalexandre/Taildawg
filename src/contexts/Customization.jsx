@@ -9,102 +9,102 @@ export const paddleList = [
 ];
 
 export const letterList = [
-  {
-    name: "alpha",
-    symbol: "Α",
-  },
-  {
-    name: "beta",
-    symbol: "Β",
-  },
-  {
-    name: "gamma",
-    symbol: "Γ",
-  },
+  // {
+  //   name: "alpha",
+  //   symbol: "Α",
+  // },
+  // {
+  //   name: "beta",
+  //   symbol: "Β",
+  // },
+  // {
+  //   name: "gamma",
+  //   symbol: "Γ",
+  // },
   {
     name: "delta",
     symbol: "Δ",
   },
-  {
-    name: "epsilon",
-    symbol: "Ε",
-  },
-  {
-    name: "zeta",
-    symbol: "Ζ",
-  },
-  {
-    name: "eta",
-    symbol: "Η",
-  },
-  {
-    name: "theta",
-    symbol: "Θ",
-  },
-  {
-    name: "iota",
-    symbol: "Ι",
-  },
-  {
-    name: "kappa",
-    symbol: "Κ",
-  },
-  {
-    name: "lambda",
-    symbol: "Λ",
-  },
-  {
-    name: "mu",
-    symbol: "Μ",
-  },
-  {
-    name: "nu",
-    symbol: "Ν",
-  },
-  {
-    name: "xi",
-    symbol: "Ξ",
-  },
-  {
-    name: "omicron",
-    symbol: "Ο",
-  },
+  // {
+  //   name: "epsilon",
+  //   symbol: "Ε",
+  // },
+  // {
+  //   name: "zeta",
+  //   symbol: "Ζ",
+  // },
+  // {
+  //   name: "eta",
+  //   symbol: "Η",
+  // },
+  // {
+  //   name: "theta",
+  //   symbol: "Θ",
+  // },
+  // {
+  //   name: "iota",
+  //   symbol: "Ι",
+  // },
+  // {
+  //   name: "kappa",
+  //   symbol: "Κ",
+  // },
+  // {
+  //   name: "lambda",
+  //   symbol: "Λ",
+  // },
+  // {
+  //   name: "mu",
+  //   symbol: "Μ",
+  // },
+  // {
+  //   name: "nu",
+  //   symbol: "Ν",
+  // },
+  // {
+  //   name: "xi",
+  //   symbol: "Ξ",
+  // },
+  // {
+  //   name: "omicron",
+  //   symbol: "Ο",
+  // },
   {
     name: "pi",
     symbol: "Π",
   },
-  {
-    name: "rho",
-    symbol: "Ρ",
-  },
-  {
-    name: "sigma",
-    symbol: "Σ",
-  },
-  {
-    name: "tau",
-    symbol: "Τ",
-  },
-  {
-    name: "upsilon",
-    symbol: "Υ",
-  },
-  {
-    name: "phi",
-    symbol: "Φ",
-  },
-  {
-    name: "chi",
-    symbol: "Χ",
-  },
+  // {
+  //   name: "rho",
+  //   symbol: "Ρ",
+  // },
+  // {
+  //   name: "sigma",
+  //   symbol: "Σ",
+  // },
+  // {
+  //   name: "tau",
+  //   symbol: "Τ",
+  // },
+  // {
+  //   name: "upsilon",
+  //   symbol: "Υ",
+  // },
+  // {
+  //   name: "phi",
+  //   symbol: "Φ",
+  // },
+  // {
+  //   name: "chi",
+  //   symbol: "Χ",
+  // },
   {
     name: "psi",
     symbol: "Ψ",
   },
-  {
-    name: "omega",
-    symbol: "Ω",
-  },
+  // {
+  //   name: "omega",
+  //   symbol: "Ω",
+  // },
 ];
 
 export const CustomizationProvider = (props) => {
@@ -119,9 +119,9 @@ export const CustomizationProvider = (props) => {
     "#000000",
   ]);
   const [meshLetters, setMeshLetters] = useState([
-    letterList[15],
-    letterList[3],
-    letterList[22],
+    letterList[1],
+    letterList[0],
+    letterList[2],
   ]); // Initializing with indices for letterList
 
   const updateColors = (index, color) => {

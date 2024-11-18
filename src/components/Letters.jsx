@@ -72,7 +72,6 @@ export default function Letters(props) {
           .map((letter, index) => (
             <Model
               key={index}
-              index={index}
               letter={letter}
               position={[0, 0, -index * 0.5]}
               onClick={() => {

@@ -26,7 +26,7 @@ export default function Demo() {
           floatingRange={[0, 0.25]}
         >
           <Suspense>
-            <Letters />
+            <Letters />{" "}
           </Suspense>
           {/* <Model model="pi"></Model> */}
         </Float>

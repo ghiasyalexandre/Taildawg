@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Model({ letter, index, colorProp, ...props }) {
+export function Model({ letter, colorProp, ...props }) {
   // Check if letter object has the name property
   if (!letter || !letter.name) {
     console.error("Invalid letter object or missing name property:", letter);
@@ -9,7 +9,7 @@ export function Model({ letter, index, colorProp, ...props }) {
   }
 
   const modelPath = `./models/${letter.name}.glb`;
-  console.log(index, "Loading model:", modelPath); // Log the model path for debugging
+  //console.log(index, "Loading model:", modelPath); // Log the model path for debugging
 
   // Preload the GLTF model to improve performance
   useGLTF.preload(modelPath);
